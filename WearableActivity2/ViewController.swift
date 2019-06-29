@@ -26,15 +26,13 @@ class ViewController: UIViewController ,WCSessionDelegate{
     
 
     
-    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void)  {
-        let value = message["Value"] as? String
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         
      print("phone got a message")
         //Use this to update the UI immedaitely oterwise it takes time
         DispatchQueue.main.async() {
      self.Outputlabel.text = message["Message"] as? String
         }
-        replyHandler(["Value":"Hello Watch" as AnyObject])
     }
     
 
