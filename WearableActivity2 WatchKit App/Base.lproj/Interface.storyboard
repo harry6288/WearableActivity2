@@ -14,7 +14,11 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WearableActivity2_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <button width="1" alignment="left" verticalAlignment="center" title="Button" id="FPC-J4-SVp"/>
+                        <button width="1" alignment="left" verticalAlignment="center" title="Button" id="FPC-J4-SVp">
+                            <connections>
+                                <action selector="WatchButtonPressed" destination="AgC-eL-Hgc" id="wkd-4H-xhG"/>
+                            </connections>
+                        </button>
                         <label width="124" height="32" alignment="center" text="Label" textAlignment="center" id="FwX-z9-pNf"/>
                     </items>
                     <connections>

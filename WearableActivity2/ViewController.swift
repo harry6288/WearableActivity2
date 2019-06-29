@@ -10,6 +10,8 @@ import UIKit
 import WatchConnectivity
 
 class ViewController: UIViewController ,WCSessionDelegate{
+    
+    @IBOutlet weak var Outputlabel: UILabel!
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
     }
@@ -20,6 +22,14 @@ class ViewController: UIViewController ,WCSessionDelegate{
     
     func sessionDidDeactivate(_ session: WCSession) {
         
+    }
+    
+
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        
+     print("phone got a message")
+     self.Outputlabel.text = message["Message"] as? String
     }
     
 
