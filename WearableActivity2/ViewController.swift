@@ -29,7 +29,10 @@ class ViewController: UIViewController ,WCSessionDelegate{
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         
      print("phone got a message")
+        //Use this to update the UI immedaitely oterwise it takes time
+        DispatchQueue.main.async() {
      self.Outputlabel.text = message["Message"] as? String
+        }
     }
     
 
